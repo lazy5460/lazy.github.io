@@ -7,8 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="header-inner">
+            <h1>My Website</h1>
+            <nav>
+                <a href="#home">ホーム</a>
+                <a href="#features">主要機能</a>
+                <a href="#contact">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <section>
+        <section id="home" class="hero">
+            <h2>ようこそ — シンプルな電卓と静的サイトテンプレート</h2>
+            <p>このページは電卓機能を中心にした最小の静的サイトです。電卓は下部にあります。必要に応じてホームページのコンテンツや構成を追加してください。</p>
+        </section>
+
+        <section id="features" class="features">
+            <h3>主要機能</h3>
+            <ul>
+                <li>計算機 — ページ内の電卓コンポーネント（四則演算、小数、括弧の一部サポート）</li>
+                <li>ホームページ作成してください — テンプレートを使って紹介文・画像・連絡先を追加可能</li>
+            </ul>
+        </section>
+
+        <section aria-label="電卓セクション">
             <div class="calculator" aria-label="電卓">
                 <input type="text" id="display" aria-label="表示" disabled>
                 <div class="buttons" role="group" aria-label="電卓ボタン">
@@ -32,7 +56,14 @@
                 </div>
             </div>
         </section>
+
     </main>
+
+    <footer id="contact">
+        <p>住所: 東京都千代田区1-2-3</p>
+        <p>メール: info@example.com</p>
+        <p>&copy; 2025 My Website</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

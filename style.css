@@ -8,6 +8,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ヘッダー */
+header {
+  background-color: #333;
+  color: #fff;
+}
+
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner h1 { margin: 0; font-size: 20px; }
+.header-inner nav a { color: #fff; margin-left: 14px; text-decoration: none; }
+.header-inner nav a:hover { text-decoration: underline; }
+
 /* 電卓コンテナ */
 .calculator {
   background: #fff;
@@ -18,7 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 320px;
-  margin: 48px auto;
+  margin: 24px auto 48px;
 }
 
 #display {
@@ -60,10 +79,23 @@ body {
 .buttons button:nth-child(15):hover { background-color: #45a049; }
 
 #clear { background-color: #ff6666; color: #fff; }
-
 /* 小さな画面向けに縮小 */
 @media (max-width: 380px) {
   .calculator { width: 280px; }
   .buttons { grid-template-columns: repeat(4, 60px); gap: 8px; }
   .buttons button { width: 60px; height: 60px; font-size: 18px; }
+}
+
+/* ヒーローと主要機能のスタイル */
+.hero { text-align: center; padding: 28px 20px; max-width: 980px; margin: 0 auto; }
+.features { max-width: 720px; margin: 8px auto 24px; padding: 0 16px; }
+.features h3 { margin-top: 0; }
+.features ul { padding-left: 1.2em; }
+
+footer {
+  text-align: center;
+  padding: 18px 12px;
+  background-color: #333;
+  color: #fff;
+  margin-top: 32px;
 }
