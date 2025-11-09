@@ -1,0 +1,28 @@
+/* home.css - page-specific styles for home.html */
+
+/* make hero on home page a bit more distinct */
+.hero {
+  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  border-radius: 8px;
+  padding: 36px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.hero h2 { font-size: 28px; margin-bottom: 8px; }
+.hero p { color: #444; max-width: 760px; margin: 0 auto; }
+
+/* features list styling */
+.features { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.features li { margin: 8px 0; }
+
+/* header tweaks for home page */
+.header-inner h1 { font-size: 18px; }
+.header-inner nav a { color: #fff; opacity: 0.95; }
+
+/* footer spacing for home page */
+footer { padding: 22px 12px; }
+
+@media (max-width: 520px) {
+  .hero h2 { font-size: 20px; }
+  .features { padding: 12px; }
+}

@@ -92,10 +92,27 @@ header {
 .features h3 { margin-top: 0; }
 .features ul { padding-left: 1.2em; }
 
+.hero .hero-btn button, .hero a button { margin-top: 12px; }
+
 footer {
   text-align: center;
   padding: 18px 12px;
   background-color: #333;
   color: #fff;
   margin-top: 32px;
+}
+
+/* カレンダーセクション */
+.calendar-section { max-width: 720px; margin: 12px auto; padding: 0 16px; }
+.calendar { background: #fff; border-radius: 8px; padding: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+.calendar-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.calendar .month { font-weight:600; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap:6px; }
+.calendar .weekday { text-align:center; font-size:12px; color:#666; padding:6px 0; }
+.calendar .day { text-align:center; padding:10px 6px; background:#f7f7f7; border-radius:6px; min-height:40px; display:flex; align-items:center; justify-content:center; }
+.calendar .day.empty { background: transparent; }
+.calendar .day:hover { background:#eaeaea; cursor:default; }
+
+@media (max-width: 420px) {
+  .calendar .day { padding:8px 4px; font-size:14px; min-height:34px; }
 }
