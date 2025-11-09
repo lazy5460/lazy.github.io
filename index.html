@@ -7,25 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ようこそ！My Website</h1>
-        <nav>
-            <a href="#">ホーム</a>
-            <a href="#">紹介</a>
-            <a href="#">お問い合わせ</a>
-        </nav>
-    </header>
-
     <main>
-        <section class="hero">
-            <h2>テスト用サイトへようこそ</h2>
-            <p>これはGitHub Pagesで公開できるシンプルなテンプレートです。</p>
-            <button id="helloBtn">クリックしてみてね</button>
-        </section>
         <section>
-            <div class="calculator">
-                <input type="text" id="display" disabled>
-                <div class="buttons">
+            <div class="calculator" aria-label="電卓">
+                <input type="text" id="display" aria-label="表示" disabled>
+                <div class="buttons" role="group" aria-label="電卓ボタン">
                     <button>7</button>
                     <button>8</button>
                     <button>9</button>
@@ -47,10 +33,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
