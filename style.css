@@ -117,35 +117,46 @@ footer {
   .calendar .day { padding:8px 4px; font-size:14px; min-height:34px; }
 }
 
-/* タブUI: プロフィール / 活動 / 連絡先 */
+/* タブUI: 電卓 / カレンダー */
 .tabs {
   max-width: 980px;
-  margin: 18px auto 0;
+  margin: 24px auto 0;
   padding: 0 16px;
 }
 .tab-buttons {
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  justify-content: center;
 }
 .tab-button {
   background: #fff;
-  border: 1px solid #ddd;
-  padding: 8px 12px;
+  border: 2px solid #ddd;
+  padding: 10px 24px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
 }
-.tab-button[aria-selected="true"], .tab-button.active {
+.tab-button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+.tab-button.active {
   background: #333;
   color: #fff;
   border-color: #333;
 }
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
+.tab-panel { 
+  display: none; 
+}
+.tab-panel.active { 
+  display: block; 
+}
 
 /* 軽いレスポンシブ調整 */
 @media (max-width: 480px) {
   .tab-buttons { gap: 6px; }
-  .tab-button { padding: 8px 10px; font-size: 14px; }
+  .tab-button { padding: 8px 16px; font-size: 14px; }
 }

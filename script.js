@@ -28,3 +28,31 @@ buttons.forEach(button => {
     display.value = currentInput;
   });
 });
+
+// タブ切り替え機能
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // すべてのタブを非アクティブに
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
+    });
+    tabPanels.forEach(panel => {
+      panel.classList.remove('active');
+    });
+
+    // クリックしたタブをアクティブに
+    button.classList.add('active');
+    button.setAttribute('aria-selected', 'true');
+
+    // 対応するパネルを表示
+    const targetId = button.getAttribute('aria-controls');
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add('active');
+    }
+  });
+});
