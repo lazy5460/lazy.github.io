@@ -5,37 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LBase — プロフィール</title>
     <link rel="stylesheet" href="style.css">
-    <!-- home.css がある場合は必要に応じて読み込む -->
-    <link rel="stylesheet" href="home.css">
     <meta name="description" content="LBase の個人プロフィールページ。活動内容・最近の更新を掲載しています。">
 </head>
 <body>
     <header>
         <div class="header-inner">
+            <button id="sidebar-toggle" class="sidebar-toggle" aria-label="サイドバーを開く">☰</button>
             <h1>LBase</h1>
             <nav>
-                <a href="home.html">ホーム</a>
-                <a href="#profile">プロフィール</a>
-                <a href="#activities">活動</a>
-                <a href="#contact">連絡先</a>
+                <a href="#home" class="nav-btn">🏠 ホーム</a>
+                <a href="#features" class="nav-btn">⭐ 主要機能</a>
+                <a href="#profile" class="nav-btn active">👤 プロフィール</a>
+                <a href="#contact" class="nav-btn">📧 連絡先</a>
             </nav>
         </div>
     </header>
 
+    <!-- サイドバー -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>メニュー</h2>
+            <button id="sidebar-close" class="sidebar-close" aria-label="サイドバーを閉じる">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home">🏠 ホーム</a>
+            <a href="#features">⭐ 主要機能</a>
+            <a href="#calculator">🧮 電卓・カレンダー</a>
+            <a href="#profile">👤 プロフィール</a>
+            <a href="#activities">📋 活動</a>
+            <a href="#contact">📧 連絡先</a>
+        </nav>
+    </aside>
+
     <main>
-                <div class="tabs">
-                    <div class="tab-buttons" role="tablist" aria-label="ページタブ">
-                        <button class="tab-button" role="tab" aria-selected="true" data-target="profile">プロフィール</button>
-                        <button class="tab-button" role="tab" aria-selected="false" data-target="activities">活動</button>
-                        <button class="tab-button" role="tab" aria-selected="false" data-target="contact">連絡先</button>
+        <!-- ホームセクション -->
+        <section id="home" class="hero">
+            <h2>ようこそ — LBase</h2>
+            <p>シンプルな電卓機能を中心にした静的サイトです。電卓とカレンダー、プロフィール情報をご覧いただけます。</p>
+        </section>
+
+        <!-- 主要機能セクション -->
+        <section id="features" class="features">
+            <h3>主要機能</h3>
+            <ul>
+                <li>計算機 — 四則演算、小数、括弧の一部サポート</li>
+                <li>カレンダー — 月表示のシンプルなカレンダー</li>
+                <li>プロフィール — 活動内容や連絡先の表示</li>
+            </ul>
+        </section>
+
+        <!-- 電卓・カレンダータブセクション -->
+        <section id="calculator" class="tabs">
+            <div class="tab-buttons" role="tablist">
+                <button class="tab-button active" role="tab" aria-selected="true" aria-controls="calculator-tab" id="calc-btn">
+                    🧮 電卓
+                </button>
+                <button class="tab-button" role="tab" aria-selected="false" aria-controls="calendar-tab" id="cal-btn">
+                    📅 カレンダー
+                </button>
+            </div>
+
+            <!-- 電卓タブ -->
+            <div id="calculator-tab" class="tab-panel active" role="tabpanel" aria-labelledby="calc-btn">
+                <div class="calculator" aria-label="電卓">
+                    <input type="text" id="display" aria-label="表示" disabled>
+                    <div class="buttons" role="group" aria-label="電卓ボタン">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button>/</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>*</button>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>-</button>
+                        <button>0</button>
+                        <button>.</button>
+                        <button>=</button>
+                        <button>+</button>
+                        <button id="clear">C</button>
                     </div>
                 </div>
+            </div>
 
-                <section id="profile" class="profile-section tab-panel active" data-tab="profile">
+            <!-- カレンダータブ -->
+            <div id="calendar-tab" class="tab-panel" role="tabpanel" aria-labelledby="cal-btn">
+                <div class="calendar" aria-label="カレンダー">
+                    <div class="calendar-header">
+                        <div class="month">November 2025</div>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day">1</div>
+
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+
+                        <div class="day">23</div>
+                        <div class="day">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+
+                        <div class="day">30</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- プロフィールセクション -->
+        <section id="profile" class="profile-section">
             <h2>プロフィール</h2>
             <div class="profile-inner">
                 <div class="avatar" aria-hidden="true">
-                    <!-- シンプルな SVG プレースホルダ -->
                     <svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
                         <circle cx="12" cy="8" r="4" fill="#ddd"></circle>
                         <path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#ddd"></path>
@@ -45,55 +166,114 @@
                     <h3>名前: lazy5460</h3>
                     <p class="bio">フロントエンド中心の静的サイトや小さなツールを作ることが好きな開発者です。シンプルでメンテしやすいコードを心がけています。</p>
                     <p class="location">拠点: 東京</p>
-                    <p class="contact"><strong>メール:</strong> info@example.com</p>
                 </div>
             </div>
         </section>
 
-        <section id="activities" class="activities-section tab-panel" data-tab="activities">
+        <!-- 活動セクション -->
+        <section id="activities" class="activities-section">
             <h2>最近の活動</h2>
             <ul class="activities-list">
-                <li><time datetime="2025-11-12">2025-11-12</time> — このサイトのトップページとホームページの内容を整理しました。</li>
+                <li><time datetime="2025-11-13">2025-11-13</time> — サイトを1ページに統合し、ナビゲーションを改善しました。</li>
+                <li><time datetime="2025-11-12">2025-11-12</time> — 電卓とカレンダーのタブ機能を追加しました。</li>
                 <li><time datetime="2025-10-05">2025-10-05</time> — 電卓コンポーネントのバグ修正（表示周りの改善）。</li>
-                <li><time datetime="2025-08-20">2025-08-20</time> — 静的サイトのデザインをリファクタリング。</li>
             </ul>
-            <p class="more"><a href="home.html">詳細・過去ログを見る</a></p>
         </section>
 
-                <section id="contact" class="contact-section tab-panel" data-tab="contact">
+        <!-- 連絡先セクション -->
+        <section id="contact" class="contact-section">
             <h2>連絡先</h2>
-            <p>ご依頼や質問はメールでお願いします: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>X (Twitter): <a href="https://x.com/0_lazyy" target="_blank" rel="noopener">@0_lazyy</a></p>
         </section>
     </main>
         <footer>
+        <p>X (Twitter): <a href="https://x.com/0_lazyy" target="_blank" rel="noopener">@0_lazyy</a></p>
                 <p>&copy; 2025 LBase</p>
         </footer>
 
+        <script src="script.js"></script>
         <script>
-            // タブ切替の簡易スクリプト
+            // サイドバー開閉
             (function(){
-                const buttons = document.querySelectorAll('.tab-button');
-                const panels = document.querySelectorAll('.tab-panel');
+                const sidebar = document.getElementById('sidebar');
+                const toggleBtn = document.getElementById('sidebar-toggle');
+                const closeBtn = document.getElementById('sidebar-close');
 
-                function activate(target){
-                    buttons.forEach(b => {
-                        const sel = b.getAttribute('data-target') === target;
-                        b.setAttribute('aria-selected', sel ? 'true' : 'false');
-                        b.classList.toggle('active', sel);
-                    });
-                    panels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab') === target));
+                function openSidebar() {
+                    sidebar.classList.add('open');
+                    toggleBtn.setAttribute('aria-label', 'サイドバーを閉じる');
                 }
 
-                buttons.forEach(b => {
-                    b.addEventListener('click', () => activate(b.getAttribute('data-target')));
-                    b.addEventListener('keydown', (e)=>{
-                        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+                function closeSidebar() {
+                    sidebar.classList.remove('open');
+                    toggleBtn.setAttribute('aria-label', 'サイドバーを開く');
+                }
+
+                toggleBtn.addEventListener('click', () => {
+                    if (sidebar.classList.contains('open')) {
+                        closeSidebar();
+                    } else {
+                        openSidebar();
+                    }
+                });
+
+                closeBtn.addEventListener('click', closeSidebar);
+
+                // サイドバー外をクリックで閉じる
+                document.addEventListener('click', (e) => {
+                    if (sidebar.classList.contains('open') && 
+                        !sidebar.contains(e.target) && 
+                        !toggleBtn.contains(e.target)) {
+                        closeSidebar();
+                    }
+                });
+
+                // サイドバー内のリンクをクリックで閉じる
+                const sidebarLinks = sidebar.querySelectorAll('a');
+                sidebarLinks.forEach(link => {
+                    link.addEventListener('click', closeSidebar);
+                });
+            })();
+
+            // スムーズスクロールとアクティブリンク更新
+            (function(){
+                const navLinks = document.querySelectorAll('header nav a');
+                const sections = document.querySelectorAll('main section[id]');
+
+                // リンククリック時のスムーズスクロール
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const href = link.getAttribute('href');
+                        if (href.startsWith('#')) {
                             e.preventDefault();
-                            const idx = Array.from(buttons).indexOf(document.activeElement);
-                            const next = e.key === 'ArrowRight' ? (idx+1) % buttons.length : (idx-1 + buttons.length) % buttons.length;
-                            buttons[next].focus();
+                            const targetId = href.substring(1);
+                            const targetSection = document.getElementById(targetId);
+                            if (targetSection) {
+                                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                
+                                // アクティブクラスを更新
+                                navLinks.forEach(l => l.classList.remove('active'));
+                                link.classList.add('active');
+                            }
                         }
-                        if(e.key === 'Enter' || e.key === ' ') { activate(b.getAttribute('data-target')); }
+                    });
+                });
+
+                // スクロール時にアクティブセクションを検出
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop - 100;
+                        if (window.scrollY >= sectionTop) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
                     });
                 });
             })();
