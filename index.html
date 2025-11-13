@@ -13,9 +13,9 @@
             <button id="sidebar-toggle" class="sidebar-toggle" aria-label="サイドバーを開く">☰</button>
             <h1><a href="#" class="logo-link">LBase</a></h1>
             <nav>
-                <a href="#home" class="nav-btn">🏠 ホーム</a>
+                <a href="#home" class="nav-btn active">🏠 ホーム</a>
                 <a href="#features" class="nav-btn">⭐ 主要機能</a>
-                <a href="#profile" class="nav-btn active">👤 プロフィール</a>
+                <a href="#profile" class="nav-btn">👤 プロフィール</a>
                 <a href="#contact" class="nav-btn">📧 連絡先</a>
             </nav>
         </div>
@@ -95,7 +95,12 @@
             <div id="calendar-tab" class="tab-panel" role="tabpanel" aria-labelledby="cal-btn">
                 <div class="calendar" aria-label="カレンダー">
                     <div class="calendar-header">
-                        <div class="month">November 2025</div>
+                        <button id="prev-month" class="month-btn" aria-label="前の月">◀</button>
+                        <div id="current-month" class="month">November 2025</div>
+                        <button id="next-month" class="month-btn" aria-label="次の月">▶</button>
+                    </div>
+                    <div class="calendar-controls">
+                        <button id="today-btn" class="today-btn">Today</button>
                     </div>
                     <div class="calendar-grid">
                         <div class="weekday">Sun</div>
@@ -105,48 +110,7 @@
                         <div class="weekday">Thu</div>
                         <div class="weekday">Fri</div>
                         <div class="weekday">Sat</div>
-
-                        <div class="day empty"></div>
-                        <div class="day empty"></div>
-                        <div class="day empty"></div>
-                        <div class="day empty"></div>
-                        <div class="day empty"></div>
-                        <div class="day empty"></div>
-                        <div class="day">1</div>
-
-                        <div class="day">2</div>
-                        <div class="day">3</div>
-                        <div class="day">4</div>
-                        <div class="day">5</div>
-                        <div class="day">6</div>
-                        <div class="day">7</div>
-                        <div class="day">8</div>
-
-                        <div class="day">9</div>
-                        <div class="day">10</div>
-                        <div class="day">11</div>
-                        <div class="day">12</div>
-                        <div class="day">13</div>
-                        <div class="day">14</div>
-                        <div class="day">15</div>
-
-                        <div class="day">16</div>
-                        <div class="day">17</div>
-                        <div class="day">18</div>
-                        <div class="day">19</div>
-                        <div class="day">20</div>
-                        <div class="day">21</div>
-                        <div class="day">22</div>
-
-                        <div class="day">23</div>
-                        <div class="day">24</div>
-                        <div class="day">25</div>
-                        <div class="day">26</div>
-                        <div class="day">27</div>
-                        <div class="day">28</div>
-                        <div class="day">29</div>
-
-                        <div class="day">30</div>
+                        <!-- 日付は JavaScript で動的に生成 -->
                     </div>
                 </div>
             </div>
@@ -165,7 +129,7 @@
                 <div class="profile-meta">
                     <h3>名前: lazy5460</h3>
                     <p class="bio">フロントエンド中心の静的サイトや小さなツールを作ることが好きな開発者です。シンプルでメンテしやすいコードを心がけています。</p>
-                    <p class="location">拠点: 東京</p>
+                    <p class="location">拠点: 関西</p>
                 </div>
             </div>
         </section>

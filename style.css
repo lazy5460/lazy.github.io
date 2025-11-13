@@ -469,17 +469,75 @@ header {
 
 .calendar-header { 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 2px solid #e0e0e0;
+  gap: 16px;
 }
 
 .calendar .month { 
   font-weight: 700;
   font-size: 22px;
   color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+.month-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.month-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.month-btn:active {
+  transform: scale(0.98);
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.today-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.today-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.today-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
 }
 
 .calendar-grid { 
@@ -521,6 +579,20 @@ header {
   color: #fff;
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.calendar .day.today {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  border: 2px solid #4CAF50;
+}
+
+.calendar .day.today:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.5);
 }
 
 /* ============================
