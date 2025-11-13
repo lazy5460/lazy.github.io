@@ -3,46 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホームページ - My Website</title>
+    <title>LBase</title>
     <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <h1>My Website — ホームページ</h1>
+            <h1>LBase</h1>
             <nav>
-                <a href="index.html">トップに戻る</a>
-                <a href="index.html#features">主要機能</a>
+                <a href="#home">ホーム</a>
+                <a href="#features">主要機能</a>
                 <a href="#contact">お問い合わせ</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <h2>このサイトについて</h2>
-            <p>ここはサンプルのホームページです。紹介文や製品・サービスの一覧、画像ギャラリー、連絡先フォームなどを追加してください。</p>
+        <section id="home" class="hero">
+            <h2>ようこそ — シンプルな電卓と静的サイトテンプレート</h2>
+            <p>このページは電卓機能を中心にした最小の静的サイトです。電卓は下部にあります。必要に応じてホームページのコンテンツや構成を追加してください。</p>
+            <p><a href="home.html"><button type="button">ホームページを見る</button></a></p>
         </section>
 
-        <section class="features">
+        <section id="features" class="features">
             <h3>主要機能</h3>
             <ul>
-                <li>シンプルな静的ページ（HTML/CSS/JS）</li>
-                <li>電卓コンポーネント（トップページに配置）</li>
-                <li>ページは GitHub Pages で公開可能</li>
+                <li>計算機 — ページ内の電卓コンポーネント（四則演算、小数、括弧の一部サポート）</li>
+                <li>ホームページ作成してください — テンプレートを使って紹介文・画像・連絡先を追加可能</li>
             </ul>
         </section>
 
-        <section id="contact">
-            <h3>連絡先</h3>
-            <p>住所: 東京都千代田区1-2-3</p>
-            <p>メール: info@example.com</p>
+        <section id="calendar" class="calendar-section">
+            <h3>カレンダー</h3>
+            <div class="calendar" aria-label="カレンダー">
+                <div class="calendar-header">
+                    <div class="month">November 2025</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+
+                    <!-- November 2025 starts on Saturday -> pad with empty cells -->
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day empty"></div>
+                    <div class="day">1</div>
+
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+
+                    <div class="day">30</div>
+                </div>
+            </div>
         </section>
+
+        <section aria-label="電卓セクション">
+            <div class="calculator" aria-label="電卓">
+                <input type="text" id="display" aria-label="表示" disabled>
+                <div class="buttons" role="group" aria-label="電卓ボタン">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>/</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>*</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>-</button>
+                    <button>0</button>
+                    <button>.</button>
+                    <button>=</button>
+                    <button>+</button>
+                    <button id="clear">C</button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 My Website</p>
+    <footer id="contact">
+        <p>住所: 東京都千代田区1-2-3</p>
+        <p>メール: info@example.com</p>
+    <p>&copy; 2025 LBase</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
